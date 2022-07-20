@@ -11,7 +11,6 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-# Create your views here.
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
