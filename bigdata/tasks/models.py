@@ -6,7 +6,8 @@ from django.conf import settings
 class Task(models.Model):
     assigner = models.ForeignKey(User, related_name='tasks', on_delete=models.CASCADE)
     task_name = models.CharField('название задачи', max_length=100, blank=True, null=False)
-    task_endtime = models.DateTimeField()
+    task_endtime = models.DateTimeField('время окончания')
+    performers = models.ManyToManyField(User, related_name="task_list")
 
     class Meta:
         verbose_name = 'Задача'
